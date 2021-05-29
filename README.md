@@ -12,3 +12,6 @@ you can use my aws endpoint. But you want to use your aws endpoint, change 'aws_
 
 ### 3. flutter run
 run your code.
+
+### 4. result
+<img src="./images/demo_picture.jpg">
