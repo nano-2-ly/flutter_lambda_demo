@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 
+String aws_endpoint = "https://gpo9r3cm1b.execute-api.ap-northeast-2.amazonaws.com/default/movie_test";
+
 void main() {
   runApp(MyApp());
 }
@@ -83,7 +85,7 @@ Widget MovieInfo(BuildContext context) {
 
 Future<List> fetchPost() async {
   http.Response response = await http.get(Uri.parse(
-      "https://gpo9r3cm1b.execute-api.ap-northeast-2.amazonaws.com/default/movie_test"));
+      aws_endpoint));
   final parsed = await jsonDecode(response.body).cast<Map<String, dynamic>>();
   return parsed.map<Movie>((json) => Movie.fromJson(json)).toList();
 }
